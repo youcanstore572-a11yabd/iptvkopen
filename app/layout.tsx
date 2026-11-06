@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins, Montserrat } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -7,21 +6,6 @@ import Footer from './components/Footer';
 import { CONSTANTS } from '@/lib/seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Loading from './components/loading';
-
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-  display: 'swap',
-});
-
-const montserrat = Montserrat({
-  weight: ['400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
-});
 
 const SITE_URL = `https://${CONSTANTS.DOMAIN}`;
 const BRAND = CONSTANTS.BRAND_NAME;
@@ -240,14 +224,15 @@ export default function RootLayout({
     <html lang="nl" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap"
         />
       </head>
       <body
-        className={`${poppins.className} ${montserrat.variable} antialiased min-h-screen bg-[#000000] text-[#FFFFFF] selection:bg-[#39FF14] selection:text-[#000000]`}
+        style={{ fontFamily: "'Poppins', 'Montserrat', sans-serif" }}
+        className={`antialiased min-h-screen bg-[#000000] text-[#FFFFFF] selection:bg-[#39FF14] selection:text-[#000000]`}
         suppressHydrationWarning
       >
         <OrganizationSchema />
