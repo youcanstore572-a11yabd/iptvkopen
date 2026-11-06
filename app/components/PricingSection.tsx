@@ -30,15 +30,15 @@ export default function PricingSection() {
   const currentPricing = pricing[devices] || pricing[1];
 
   const handleWhatsAppRedirect = (months: number) => {
-    const message = `Hallo, ik wil graag een IPTV Kopen abonnement van ${months} maanden bestellen voor ${devices} ${
+    const message = `Hallo, ik wil graag een service-abonnement van ${months} maanden bestellen voor ${devices} ${
       devices > 1 ? 'schermen' : 'scherm'
-    } via IPTVKopen.plus.`;
+    }.`;
     const redirectUrl = `https://support-tv.online/?text=${encodeURIComponent(message)}`;
     window.open(redirectUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleFreeTrialRedirect = () => {
-    const message = `Hallo, ik wil graag een gratis 24-uurs IPTV test aanvragen voor IPTV Nederland via IPTVKopen.plus.`;
+    const message = `Hallo, ik wil graag een gratis test aanvragen voor jullie service in Nederland`;
     const redirectUrl = `https://support-tv.online/?text=${encodeURIComponent(message)}`;
     window.open(redirectUrl, '_blank', 'noopener,noreferrer');
   };

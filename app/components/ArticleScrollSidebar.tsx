@@ -25,16 +25,16 @@ const BRAND = CONSTANTS.BRAND_NAME;
 function getCategoryLabel(post: any): string {
   if (post.category) {
     const map: Record<string, string> = {
-      setup: 'Setup Guide',
+      setup: 'Installatiegids',
       review: 'Review',
-      sports: 'Live Sports',
-      tips: 'Tips & Tricks',
-      news: 'News',
+      sports: 'Live Sport',
+      tips: 'Tips & Trucs',
+      news: 'Nieuws',
     };
     return map[post.category] || post.category;
   }
   if (post.keywords && post.keywords.length > 0) return post.keywords[0];
-  return 'IPTV Provider Guide';
+  return 'IPTV Gids';
 }
 
 function getReadTime(post: any): number {
@@ -53,7 +53,7 @@ function formatDateShort(dateStr: string): string {
   try {
     const d = new Date(dateStr);
     if (isNaN(d.getTime())) return dateStr;
-    return d.toLocaleDateString('en-US', {
+    return d.toLocaleDateString('nl-NL', {
       month: 'short',
       day: 'numeric',
       year: 'numeric',
@@ -75,43 +75,45 @@ export default function ArticleScrollSidebar({
   whatsappIboMsg: string;
   whatsappSubMsg: string;
 }) {
+  const whatsappUrl = CONSTANTS.CONTACT?.whatsapp || '#';
+
   return (
     <aside className="lg:col-span-4 order-2 lg:order-2 lg:self-start lg:sticky lg:top-24 h-fit">
       <div className="space-y-6">
         {/* =====================================================
-            Card 1 — IPTV Smarter Pro
+            Kaart 1 — IPTV Smarters Pro Aanbevolen
         ===================================================== */}
-        <div className="bg-[#132948] border-2 border-[#39FF14]/40 rounded-none p-6 shadow-2xl relative overflow-hidden">
+        <div className="bg-[#111111] border-2 border-[#39FF14]/40 rounded-none p-6 shadow-2xl relative overflow-hidden">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#39FF14]/10 rounded-none blur-2xl pointer-events-none" />
 
-          <div className="inline-flex items-center gap-1.5 bg-[#39FF14] text-[#0A1A2F] px-3 py-1 rounded-none text-[10px] font-black uppercase tracking-widest mb-3 shadow-md">
-            <Flame className="w-3.5 h-3.5" /> Recommended Player
+          <div className="inline-flex items-center gap-1.5 bg-[#39FF14] text-[#000000] px-3 py-1 rounded-none text-[10px] font-black uppercase tracking-widest mb-3 shadow-md">
+            <Flame className="w-3.5 h-3.5" /> Aanbevolen Speler
           </div>
 
           <h2 className="text-lg sm:text-xl font-black text-[#FFFFFF] uppercase tracking-tight mb-2">
-            Get IPTV Smarter Pro Access
+            Krijg IPTV Smarters Pro Toegang
           </h2>
-          <p className="text-[#F4F6F9]/80 text-xs sm:text-sm font-bold leading-relaxed mb-6">
-            IPTV Smarter Pro is one of our top-pick players for fast, secure playback with minimal buffering. Our team helps you get set up and stays on hand throughout your whole subscription.
+          <p className="text-[#FFFFFF]/80 text-xs sm:text-sm font-bold leading-relaxed mb-6">
+            IPTV Smarters Pro is een van onze favoriete spelers voor snelle en stabiele streaming met minimale buffering. Ons team helpt u direct op weg met de installatie.
           </p>
 
           <a
-            href={`${CONSTANTS.CONTACT.whatsapp}?text=${whatsappIboMsg}`}
+            href={`${whatsappUrl}?text=${whatsappIboMsg}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#39FF14] text-[#0A1A2F] font-black text-xs uppercase tracking-widest hover:bg-[#32e012] transition-all shadow-[0_8px_25px_rgba(57,255,20,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,128,0,0.6)] border border-green-300"
+            className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-none bg-[#39FF14] text-[#000000] font-black text-xs uppercase tracking-widest cursor-pointer transition-all duration-300 hover:bg-white hover:scale-[1.01] active:scale-[0.98] shadow-[0_8px_25px_rgba(57,255,20,0.3)] border border-white/20"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
-            <span>Order IPTV Smarter Pro</span>
+            <span>Bestel IPTV Smarters Pro</span>
           </a>
         </div>
 
         {/* =====================================================
-            Card 2 — Official Plans
+            Kaart 2 — Officiële Pakketten
         ===================================================== */}
-        <div className="relative rounded-none overflow-hidden shadow-2xl bg-[#132948] border-2 border-white/10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0A1A2F] via-[#132948] to-[#0A1A2F]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,215,0,0.1),_transparent_60%)] pointer-events-none" />
+        <div className="relative rounded-none overflow-hidden shadow-2xl bg-[#111111] border-2 border-white/10">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#111111] to-[#000000]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(57,255,20,0.08),_transparent_60%)] pointer-events-none" />
           <div
             className="absolute inset-0 opacity-5 pointer-events-none"
             style={{
@@ -121,21 +123,21 @@ export default function ArticleScrollSidebar({
           />
 
           <div className="relative z-10 p-6">
-            <div className="inline-flex items-center gap-1.5 bg-[#FFD700] text-[#0A1A2F] px-3 py-1 rounded-none text-[10px] font-black uppercase tracking-widest mb-4 shadow-md">
-              <Crown className="w-3.5 h-3.5" /> Official Plans
+            <div className="inline-flex items-center gap-1.5 bg-[#39FF14] text-[#000000] px-3 py-1 rounded-none text-[10px] font-black uppercase tracking-widest mb-4 shadow-md">
+              <Crown className="w-3.5 h-3.5" /> Officiële Pakketten
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black text-[#FFFFFF] uppercase tracking-tight mb-2 drop-shadow-md">
               {BRAND} <br />
-              <span className="text-[#FFD700]">Subscriptions</span>
+              <span className="text-[#39FF14]">Abonnementen</span>
             </h2>
-            <p className="text-[#F4F6F9]/85 text-xs sm:text-sm font-bold leading-relaxed mb-6">
-              20,000+ live channels · 120,000+ movies &amp; TV shows · 4K Ultra HD · Anti-freeze servers.
+            <p className="text-[#FFFFFF]/85 text-xs sm:text-sm font-bold leading-relaxed mb-6">
+              36.000+ live zenders · 120.000+ films &amp; series · 4K Ultra HD · Anti-freeze servers.
             </p>
 
             <div className="space-y-3">
-              {/* Standard — 3 Months */}
-              <div className="group bg-[#0A1A2F] border-2 border-white/10 rounded-none p-4 hover:border-[#39FF14] hover:-translate-y-0.5 transition-all shadow-lg">
+              {/* Standard — 3 Maanden */}
+              <div className="group bg-[#000000] border-2 border-white/10 rounded-none p-4 hover:border-[#39FF14] hover:-translate-y-0.5 transition-all shadow-lg">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-none bg-[#39FF14]/15 flex items-center justify-center">
@@ -146,71 +148,71 @@ export default function ArticleScrollSidebar({
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-[#FFD700] font-black text-xl leading-none">
-                      $35
+                    <div className="text-[#39FF14] font-black text-xl leading-none">
+                      €35
                     </div>
-                    <div className="text-[9px] font-black uppercase tracking-wider text-[#F4F6F9]/50 mt-0.5">
-                      3 Months
+                    <div className="text-[9px] font-black uppercase tracking-wider text-[#FFFFFF]/50 mt-0.5">
+                      3 Maanden
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 mb-3 text-[10px] font-bold text-[#F4F6F9]/70">
+                <div className="flex items-center gap-2 mb-3 text-[10px] font-bold text-[#FFFFFF]/70">
                   <CheckCircle2 className="w-3 h-3 text-[#39FF14]" />
-                  <span>Set up by email in minutes</span>
+                  <span>Directe levering via WhatsApp</span>
                 </div>
                 <a
-                  href={`${CONSTANTS.CONTACT.whatsapp}?text=${whatsappSubMsg}`}
+                  href={`${whatsappUrl}?text=${whatsappSubMsg}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-2.5 rounded-2xl bg-[#39FF14] text-[#0A1A2F] hover:bg-[#32e012] transition-all font-black text-[10px] uppercase tracking-widest block shadow-[0_6px_20px_rgba(57,255,20,0.45),inset_0_2px_4px_rgba(255,255,255,0.95),inset_0_-2px_4px_rgba(0,128,0,0.6)] border border-green-300"
+                  className="w-full text-center py-2.5 rounded-none bg-[#39FF14] text-[#000000] hover:bg-white transition-all font-black text-[10px] uppercase tracking-widest cursor-pointer block shadow-[0_6px_20px_rgba(57,255,20,0.3)] border border-white/20"
                 >
-                  Order on WhatsApp
+                  Bestel via WhatsApp
                 </a>
               </div>
 
-              {/* VIP — 12 Months */}
-              <div className="group relative bg-[#0A1A2F] border-2 border-[#FFD700] rounded-none p-4 hover:border-[#39FF14] hover:-translate-y-0.5 transition-all shadow-2xl">
-                <div className="absolute -top-3 right-4 bg-[#FFD700] text-[#0A1A2F] px-2.5 py-0.5 rounded-none text-[9px] font-black uppercase tracking-widest shadow-md">
-                  ⭐ Best Value
+              {/* VIP — 12 Maanden */}
+              <div className="group relative bg-[#000000] border-2 border-[#39FF14] rounded-none p-4 hover:border-white hover:-translate-y-0.5 transition-all shadow-2xl">
+                <div className="absolute -top-3 right-4 bg-[#39FF14] text-[#000000] px-2.5 py-0.5 rounded-none text-[9px] font-black uppercase tracking-widest shadow-md">
+                  ⭐ Beste Waarde
                 </div>
 
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-none bg-[#FFD700]/20 flex items-center justify-center">
-                      <Crown className="w-4 h-4 text-[#FFD700]" />
+                    <div className="w-7 h-7 rounded-none bg-[#39FF14]/20 flex items-center justify-center">
+                      <Crown className="w-4 h-4 text-[#39FF14]" />
                     </div>
                     <span className="text-[#FFFFFF] font-black text-sm uppercase tracking-tight">
-                      12 Months VIP
+                      12 Maanden VIP
                     </span>
                   </div>
                   <div className="text-right">
-                    <div className="text-[#FFD700] font-black text-xl leading-none">
-                      $65
+                    <div className="text-[#39FF14] font-black text-xl leading-none">
+                      €65
                     </div>
-                    <div className="text-[9px] font-black uppercase tracking-wider text-[#F4F6F9]/50 mt-0.5">
-                      Save 60%
+                    <div className="text-[9px] font-black uppercase tracking-wider text-[#FFFFFF]/50 mt-0.5">
+                      Bespaar 60%
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-1 mb-3">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-[#F4F6F9]/80">
-                    <CheckCircle2 className="w-3 h-3 text-[#FFD700]" />
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-[#FFFFFF]/80">
+                    <CheckCircle2 className="w-3 h-3 text-[#39FF14]" />
                     <span>4K Anti-Freeze Servers</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-[#F4F6F9]/80">
-                    <CheckCircle2 className="w-3 h-3 text-[#FFD700]" />
-                    <span>Free trial before you pay</span>
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-[#FFFFFF]/80">
+                    <CheckCircle2 className="w-3 h-3 text-[#39FF14]" />
+                    <span>Gratis test vooraf mogelijk</span>
                   </div>
                 </div>
 
                 <a
-                  href={`${CONSTANTS.CONTACT.whatsapp}?text=${whatsappSubMsg}`}
+                  href={`${whatsappUrl}?text=${whatsappSubMsg}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center py-2.5 rounded-2xl bg-[#39FF14] text-[#0A1A2F] hover:bg-[#32e012] transition-all font-black text-[10px] uppercase tracking-widest block shadow-[0_6px_20px_rgba(57,255,20,0.45),inset_0_2px_4px_rgba(255,255,255,0.95),inset_0_-2px_4px_rgba(0,128,0,0.6)] border border-green-300"
+                  className="w-full text-center py-2.5 rounded-none bg-[#39FF14] text-[#000000] hover:bg-white transition-all font-black text-[10px] uppercase tracking-widest cursor-pointer block shadow-[0_6px_20px_rgba(57,255,20,0.3)] border border-white/20"
                 >
-                  Order VIP on WhatsApp
+                  Bestel VIP via WhatsApp
                 </a>
               </div>
             </div>
@@ -220,20 +222,20 @@ export default function ArticleScrollSidebar({
                 href="/pricing"
                 className="text-xs font-black text-[#FFFFFF] uppercase tracking-wider hover:underline inline-flex items-center gap-1 group"
               >
-                View all IPTV Subscription plans
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform text-[#FFD700]" />
+                Bekijk alle IPTV abonnementsprijzen
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform text-[#39FF14]" />
               </Link>
             </div>
           </div>
         </div>
 
         {/* =====================================================
-            Card 3 — Related Articles
+            Kaart 3 — Gerelateerde Artikelen
         ===================================================== */}
         {relatedPosts.length > 0 && (
-          <div className="bg-[#132948] border-2 border-[#39FF14]/40 rounded-none p-5 shadow-2xl">
+          <div className="bg-[#111111] border-2 border-[#39FF14]/40 rounded-none p-5 shadow-2xl">
             <h2 className="text-lg font-black text-[#FFFFFF] uppercase tracking-tight mb-4 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#39FF14]" /> Related Articles
+              <Sparkles className="w-5 h-5 text-[#39FF14]" /> Gerelateerde Artikelen
             </h2>
 
             <div className="space-y-4">
@@ -241,14 +243,15 @@ export default function ArticleScrollSidebar({
                 const relCategory = getCategoryLabel(relPost);
                 const relReadTime = getReadTime(relPost);
                 const relDate = formatDateShort(relPost.date);
+                const cleanSlug = (relPost.slug || '').trim().replace(/^\/+/, '');
 
                 return (
                   <Link
                     key={relPost.slug}
-                    href={`/blog/${relPost.slug}`}
-                    className="group block bg-[#0A1A2F] rounded-none overflow-hidden border-2 border-white/10 hover:border-[#39FF14] hover:shadow-[0_15px_35px_rgba(57,255,20,0.15)] hover:-translate-y-1 transition-all duration-500"
+                    href={`/kennisbank/${cleanSlug}`}
+                    className="group block bg-[#000000] rounded-none overflow-hidden border-2 border-white/10 hover:border-[#39FF14] hover:shadow-[0_15px_35px_rgba(57,255,20,0.15)] hover:-translate-y-1 transition-all duration-500"
                   >
-                    <div className="relative aspect-[16/10] overflow-hidden bg-[#0A1A2F]">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#000000]">
                       <Image
                         src={relPost.image}
                         alt={relPost.title}
@@ -258,43 +261,43 @@ export default function ArticleScrollSidebar({
                         sizes="(max-width: 1024px) 100vw, 350px"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A2F] via-[#0A1A2F]/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/20 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-500" />
 
                       <div className="absolute top-2 left-2 z-10">
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-none bg-[#39FF14] text-[#0A1A2F] text-[9px] font-black uppercase tracking-wider shadow-lg">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-none bg-[#39FF14] text-[#000000] text-[9px] font-black uppercase tracking-wider shadow-lg">
                           <Tag className="w-2.5 h-2.5" />
                           {relCategory}
                         </span>
                       </div>
 
                       <div className="absolute top-2 right-2 z-10">
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-none bg-[#0A1A2F]/80 backdrop-blur-md text-[#FFFFFF] text-[9px] font-black uppercase tracking-wider border border-[#39FF14]/40">
-                          <Clock className="w-2.5 h-2.5" />
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-none bg-[#000000]/80 backdrop-blur-md text-[#FFFFFF] text-[9px] font-black uppercase tracking-wider border border-[#39FF14]/40">
+                          <Clock className="w-2.5 h-2.5 text-[#39FF14]" />
                           {relReadTime} min
                         </span>
                       </div>
                     </div>
 
                     <div className="p-4">
-                      <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-wider text-[#F4F6F9]/60 mb-2">
+                      <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-wider text-[#FFFFFF]/60 mb-2">
                         <Calendar className="w-3 h-3 text-[#39FF14]" />
                         <span>{relDate}</span>
                       </div>
 
-                      <h3 className="text-sm font-black text-[#FFFFFF] uppercase tracking-tight leading-snug mb-2 line-clamp-2 group-hover:text-[#FFD700] transition-colors">
+                      <h3 className="text-sm font-black text-[#FFFFFF] uppercase tracking-tight leading-snug mb-2 line-clamp-2 group-hover:text-[#39FF14] transition-colors">
                         {relPost.title}
                       </h3>
 
-                      <p className="text-[#F4F6F9]/70 text-xs font-medium leading-relaxed line-clamp-2 mb-3">
+                      <p className="text-[#FFFFFF]/70 text-xs font-medium leading-relaxed line-clamp-2 mb-3">
                         {relPost.description || relPost.excerpt}
                       </p>
 
                       <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-                        <span className="inline-flex items-center gap-1 text-[#39FF14] font-black text-[10px] uppercase tracking-widest group-hover:text-[#FFD700] group-hover:gap-2 transition-all">
-                          Read
+                        <span className="inline-flex items-center gap-1 text-[#39FF14] font-black text-[10px] uppercase tracking-widest group-hover:text-white group-hover:gap-2 transition-all">
+                          Lees Meer
                           <ArrowRight className="w-3 h-3" />
                         </span>
-                        <div className="w-6 h-6 rounded-none bg-[#39FF14]/10 border border-[#39FF14]/30 flex items-center justify-center text-[#39FF14] group-hover:bg-[#39FF14] group-hover:text-[#0A1A2F] transition-all duration-300">
+                        <div className="w-6 h-6 rounded-none bg-[#39FF14]/10 border border-[#39FF14]/30 flex items-center justify-center text-[#39FF14] group-hover:bg-[#39FF14] group-hover:text-[#000000] transition-all duration-300">
                           <ArrowRight className="w-3 h-3" />
                         </div>
                       </div>

@@ -300,7 +300,7 @@ export default async function BlogPostPage({ params }: Props) {
     `Hi! I'd like to get IPTV Smarters Pro access subscription.`
   );
   const whatsappSubMsg = encodeURIComponent(
-    `Hi! I'd like to get a ${BRAND} subscription.`
+  `Hallo! Ik wil graag meer informatie over jullie abonnementen.`
   );
 
   const authorId = `${SITE_URL}/#author-${post.author
