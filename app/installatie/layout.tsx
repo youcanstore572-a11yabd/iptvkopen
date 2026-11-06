@@ -1,4 +1,3 @@
-// app/setup/layout.tsx
 import type { Metadata } from 'next';
 import { CONSTANTS } from '@/lib/seo';
 
@@ -13,7 +12,7 @@ const clampDescription = (s: string, max = 160): string =>
 
 const SITE_URL = CONSTANTS.SITE_URL;
 const BRAND = CONSTANTS.BRAND_NAME;
-const PAGE_URL = `${SITE_URL}/setup`;
+const PAGE_URL = `${SITE_URL}/installatie`;
 
 // ---------------------------------------------------------------------------
 // SEO STRINGS — DUTCH LOCALIZED FOR IPTV KOPEN PLUS
@@ -106,6 +105,8 @@ export const metadata: Metadata = {
 // JSON-LD SCHEMA — HowTo + FAQPage + Breadcrumbs
 // ---------------------------------------------------------------------------
 const SetupPageSchema = () => {
+  const whatsappUrl = CONSTANTS.CONTACT?.whatsapp || '#';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -128,7 +129,6 @@ const SetupPageSchema = () => {
           areaServed: ['NL', 'BE'],
           contactOption: 'https://schema.org/TollFree',
         },
-        sameAs: Object.values(CONSTANTS.SOCIALS ?? {}),
       },
 
       // HOW TO SCHEMA
@@ -186,7 +186,7 @@ const SetupPageSchema = () => {
             position: 2,
             name: 'Neem Contact op via WhatsApp',
             text: 'Stuur ons team een bericht via WhatsApp. We bevestigen je keuze, sturen een veilige betaallink en begeleiden je stap voor stap door de installatie.',
-            url: CONSTANTS.CONTACT?.whatsappUrl || '#',
+            url: whatsappUrl,
           },
           {
             '@type': 'HowToStep',
