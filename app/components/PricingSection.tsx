@@ -1,3 +1,4 @@
+// components/PricingSection.tsx
 'use client';
 
 import { useState } from 'react';
@@ -76,10 +77,10 @@ export default function PricingSection() {
               <button 
                 key={d}
                 onClick={() => setDevices(d as 1 | 2 | 3)}
-                className={`px-4 sm:px-8 py-2 md:py-3 text-xs sm:text-base font-black tracking-wider uppercase transition-all duration-200 ${
+                className={`px-4 sm:px-8 py-2 md:py-3 text-xs sm:text-base font-black tracking-wider uppercase cursor-pointer transition-all duration-300 ${
                   devices === d 
                     ? 'bg-[#FFD700] text-[#0A1A2F] rounded-2xl shadow-[0_8px_25px_rgba(255,215,0,0.5),inset_0_2px_4px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(0,0,0,0.2)] border border-yellow-200' 
-                    : 'text-[#F4F6F9] hover:text-[#FFFFFF] rounded-none'
+                    : 'text-[#F4F6F9] hover:text-[#0A1A2F] hover:bg-[#FFD700]/70 rounded-none'
                 }`}
               >
                 {d} {d > 1 ? 'Schermen' : 'Scherm'}
@@ -113,7 +114,7 @@ export default function PricingSection() {
             <div className="w-full flex mb-8">
               <button 
                 onClick={() => handleWhatsAppRedirect(3)}
-                className="w-full text-center whitespace-nowrap px-6 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
+                className="w-full text-center whitespace-nowrap px-6 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-sm uppercase tracking-widest cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-[#e6c200] active:scale-[0.98] shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
               >
                 <ShoppingCart className="w-4 h-4 text-[#0A1A2F]" />
                 <span>Kies 3 Maanden</span>
@@ -188,7 +189,7 @@ export default function PricingSection() {
             <div className="w-full flex mb-8">
               <button 
                 onClick={() => handleWhatsAppRedirect(12)}
-                className="w-full text-center whitespace-nowrap px-6 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-base uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_12px_35px_rgba(255,215,0,0.55),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
+                className="w-full text-center whitespace-nowrap px-6 py-4 cursor-pointer rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-base uppercase tracking-widest transition-all duration-300 hover:scale-[1.02] hover:bg-[#e6c200] active:scale-[0.98] shadow-[0_12px_35px_rgba(255,215,0,0.55),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
               >
                 <ShoppingCart className="w-5 h-5 text-[#0A1A2F]" />
                 <span>Bestel 12 Maanden</span>
@@ -240,7 +241,7 @@ export default function PricingSection() {
             <div className="w-full flex mb-8">
               <button 
                 onClick={() => handleWhatsAppRedirect(6)}
-                className="w-full text-center whitespace-nowrap px-6 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
+                className="w-full text-center whitespace-nowrap px-6 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-sm uppercase tracking-widest cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-[#e6c200] active:scale-[0.98] shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
               >
                 <ShoppingCart className="w-4 h-4 text-[#0A1A2F]" />
                 <span>Kies 6 Maanden</span>
@@ -291,7 +292,7 @@ export default function PricingSection() {
           <div className="w-full md:w-auto shrink-0">
             <button 
               onClick={handleFreeTrialRedirect}
-              className="w-full md:w-auto text-center whitespace-nowrap px-8 py-3.5 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-sm uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
+              className="w-full md:w-auto text-center whitespace-nowrap px-8 py-3.5 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-sm uppercase tracking-widest cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-[#e6c200] active:scale-[0.98] shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,0,0,0.2)] border border-yellow-200 flex items-center justify-center gap-2"
             >
               <ShoppingCart className="w-4 h-4 text-[#0A1A2F]" />
               <span>Test Nu Gratis</span>

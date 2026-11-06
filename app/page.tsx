@@ -222,7 +222,7 @@ export default function Home() {
               width={1200}
               height={480}
               loading="lazy"
-              className="h-full w-full object-cover border-2 border-white/10"
+              className="h-full w-full object-cover"
               sizes="(max-width: 1100px) 100vw, 1100px"
             />
           </div>

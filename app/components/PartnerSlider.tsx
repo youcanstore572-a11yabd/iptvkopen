@@ -118,7 +118,7 @@ export default function PartnerSlider() {
       </div>
 
       {/* Row 2: Reverse Slider (Lower Row - Contrast Pitch Black Background with subtle glow) */}
-      <div className="relative w-full bg-[#000000] py-6 overflow-hidden shadow-inner border-y border-white/10">
+      <div className="relative w-full bg-[#fff] py-6 overflow-hidden shadow-inner border-y border-white/10">
         {/* Blended dark gradient edge masks */}
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#000000] via-[#000000]/60 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#000000] via-[#000000]/60 to-transparent z-10 pointer-events-none" />
