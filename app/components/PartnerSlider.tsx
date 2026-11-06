@@ -1,3 +1,4 @@
+// components/PartnerSlider.tsx
 'use client';
 
 import { motion } from 'framer-motion';
@@ -6,8 +7,7 @@ import { useMemo } from 'react';
 import { CONSTANTS } from '@/lib/seo';
 
 const FOCUS_KEYWORD = CONSTANTS.FOCUS_KEYWORD;
-const SECONDARY_KEYWORD = CONSTANTS.SECONDARY_FOCUS_KEYWORD;
-const TERTIARY_KEYWORD = CONSTANTS.TERTIARY_FOCUS_KEYWORD;
+const SECONDARY_KEYWORD = CONSTANTS.SECOND_FOCUS_KEYWORD;
 
 export default function PartnerSlider() {
   // -------------------------------------------------------------------------
@@ -62,18 +62,18 @@ export default function PartnerSlider() {
   const animationDistanceDevices = devices.length * 150;
 
   return (
-    <div className="w-full relative py-12 bg-[#0A1A2F] overflow-hidden">
+    <div className="w-full relative py-12 bg-[#000000] overflow-hidden border-y border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-        <p className="text-sm text-[#FFD700] font-black uppercase tracking-widest flex items-center justify-center gap-2">
+        <p className="text-sm text-[#39FF14] font-black uppercase tracking-widest flex items-center justify-center gap-2">
           <span>Supported {FOCUS_KEYWORD} Apps &amp; Devices</span>
         </p>
       </div>
 
-      {/* Row 1: Forward Slider (Upper Row - Dark Navy Background) */}
-      <div className="relative bg-[#0A1A2F] overflow-hidden mb-8 pt-11 border-y border-white/10">
+      {/* Row 1: Forward Slider (Upper Row - Pitch Black Background) */}
+      <div className="relative bg-[#000000] overflow-hidden mb-8 pt-11 border-y border-white/10">
         {/* Blended dark gradient edge masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#0A1A2F] via-[#0A1A2F]/50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#0A1A2F] via-[#0A1A2F]/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#000000] via-[#000000]/50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#000000] via-[#000000]/50 to-transparent z-10 pointer-events-none" />
 
         <motion.div
           className="flex gap-12 md:gap-16 items-center w-max"
@@ -117,11 +117,11 @@ export default function PartnerSlider() {
         </motion.div>
       </div>
 
-      {/* Row 2: Reverse Slider (Lower Row - Light Cool Gray Background) */}
-      <div className="relative w-full bg-[#F4F6F9] py-6 overflow-hidden shadow-inner border-y border-black/10">
-        {/* Blended light gradient edge masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#F4F6F9] via-[#F4F6F9]/60 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#F4F6F9] via-[#F4F6F9]/60 to-transparent z-10 pointer-events-none" />
+      {/* Row 2: Reverse Slider (Lower Row - Contrast Pitch Black Background with subtle glow) */}
+      <div className="relative w-full bg-[#000000] py-6 overflow-hidden shadow-inner border-y border-white/10">
+        {/* Blended dark gradient edge masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-[#000000] via-[#000000]/60 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-[#000000] via-[#000000]/60 to-transparent z-10 pointer-events-none" />
 
         <motion.div
           className="flex gap-12 md:gap-16 items-center w-max"
