@@ -1,3 +1,4 @@
+// app/components/ArticleScrollSidebar.tsx
 'use client';
 
 import Link from 'next/link';
@@ -95,7 +96,7 @@ export default function ArticleScrollSidebar({
           </p>
 
           <a
-            href={`${CONSTANTS.CONTACT.whatsappUrl}?text=${whatsappIboMsg}`}
+            href={`${CONSTANTS.CONTACT.whatsapp}?text=${whatsappIboMsg}`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#39FF14] text-[#0A1A2F] font-black text-xs uppercase tracking-widest hover:bg-[#32e012] transition-all shadow-[0_8px_25px_rgba(57,255,20,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,128,0,0.6)] border border-green-300"
@@ -158,7 +159,7 @@ export default function ArticleScrollSidebar({
                   <span>Set up by email in minutes</span>
                 </div>
                 <a
-                  href={`${CONSTANTS.CONTACT.whatsappUrl}?text=${whatsappSubMsg}`}
+                  href={`${CONSTANTS.CONTACT.whatsapp}?text=${whatsappSubMsg}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full text-center py-2.5 rounded-2xl bg-[#39FF14] text-[#0A1A2F] hover:bg-[#32e012] transition-all font-black text-[10px] uppercase tracking-widest block shadow-[0_6px_20px_rgba(57,255,20,0.45),inset_0_2px_4px_rgba(255,255,255,0.95),inset_0_-2px_4px_rgba(0,128,0,0.6)] border border-green-300"
@@ -204,7 +205,7 @@ export default function ArticleScrollSidebar({
                 </div>
 
                 <a
-                  href={`${CONSTANTS.CONTACT.whatsappUrl}?text=${whatsappSubMsg}`}
+                  href={`${CONSTANTS.CONTACT.whatsapp}?text=${whatsappSubMsg}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full text-center py-2.5 rounded-2xl bg-[#39FF14] text-[#0A1A2F] hover:bg-[#32e012] transition-all font-black text-[10px] uppercase tracking-widest block shadow-[0_6px_20px_rgba(57,255,20,0.45),inset_0_2px_4px_rgba(255,255,255,0.95),inset_0_-2px_4px_rgba(0,128,0,0.6)] border border-green-300"
