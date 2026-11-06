@@ -3,6 +3,7 @@ import React from 'react';
 import { CONSTANTS } from '@/lib/seo';
 
 const SITE_URL = CONSTANTS.SITE_URL;
+const CURRENCY = 'EUR';
 
 export function ProductSchema() {
   const commonOfferDefaults = {
@@ -17,7 +18,7 @@ export function ProductSchema() {
       shippingRate: {
         '@type': 'MonetaryAmount',
         value: '0.00',
-        currency: CONSTANTS.CURRENCY,
+        currency: CURRENCY,
       },
       shippingDestination: {
         '@type': 'DefinedRegion',
@@ -75,7 +76,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'Standard - 1 Scherm (3 Maanden)',
         price: '35.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -85,7 +86,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'Standard - 1 Scherm (6 Maanden)',
         price: '45.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -95,7 +96,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'Standard - 1 Scherm (12 Maanden)',
         price: '65.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -105,7 +106,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'Premium - 2 Schermen (3 Maanden)',
         price: '45.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -115,7 +116,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'Premium - 2 Schermen (6 Maanden)',
         price: '65.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -125,7 +126,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'Premium - 2 Schermen (12 Maanden)',
         price: '85.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -135,7 +136,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'VIP Multi-Room - 3 Schermen (3 Maanden)',
         price: '59.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -145,7 +146,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'VIP Multi-Room - 3 Schermen (6 Maanden)',
         price: '79.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
@@ -155,7 +156,7 @@ export function ProductSchema() {
         '@type': 'Offer',
         name: 'VIP Multi-Room - 3 Schermen (12 Maanden)',
         price: '99.00',
-        priceCurrency: CONSTANTS.CURRENCY,
+        priceCurrency: CURRENCY,
         priceValidUntil: '2027-12-31',
         availability: 'https://schema.org/InStock',
         url: `${SITE_URL}/pricing`,
