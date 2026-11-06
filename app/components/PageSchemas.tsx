@@ -10,7 +10,7 @@ export function ProductSchema() {
     validFrom: '2025-01-01',
     hasMerchantReturnPolicy: {
       '@type': 'MerchantReturnPolicy',
-      applicableCountry: ['NL', 'BE'],
+      applicableCountry: ['NL'],
       returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
     },
     shippingDetails: {
@@ -22,7 +22,7 @@ export function ProductSchema() {
       },
       shippingDestination: {
         '@type': 'DefinedRegion',
-        addressCountry: ['NL', 'BE'],
+        addressCountry: ['NL'],
       },
       deliveryTime: {
         '@type': 'ShippingDeliveryTime',
@@ -49,7 +49,7 @@ export function ProductSchema() {
     name: `${CONSTANTS.BRAND_NAME} Premium Abonnement`,
     sku: `${CONSTANTS.BRAND_NAME.toUpperCase().replace(/\s+/g, '-')}-PREMIUM`,
     category: 'Streaming Service',
-    description: `Ervaar premium ${CONSTANTS.FOCUS_KEYWORD} van ${CONSTANTS.BRAND_NAME}. Stream 36.000+ live tv-zenders en 120.000+ films en series in heldere 4K Ultra HD. De leidende ${CONSTANTS.SECOND_FOCUS_KEYWORD} voor entertainment — met snelle WhatsApp support en een vrijblijvende proefperiode.`,
+    description: `Ervaar premium ${CONSTANTS.FOCUS_KEYWORD} van ${CONSTANTS.BRAND_NAME} in Nederland. Stream 36.000+ live tv-zenders en 120.000+ films en series in heldere 4K Ultra HD. De leidende ${CONSTANTS.SECOND_FOCUS_KEYWORD} voor entertainment — met snelle WhatsApp support en een vrijblijvende proefperiode.`,
     image: {
       '@type': 'ImageObject',
       '@id': `${SITE_URL}/#primaryimage`,
@@ -184,7 +184,7 @@ export function FAQSchema() {
         name: `Wat maakt ${CONSTANTS.BRAND_NAME} een premium ${CONSTANTS.SECOND_FOCUS_KEYWORD}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `${CONSTANTS.BRAND_NAME} levert uitstekende ${CONSTANTS.FOCUS_KEYWORD} tv-streaming in Nederland en België. In plaats van traditionele kabel of satelliet, streamen wij 36.000+ live zenders en meer dan 120.000 video-on-demand titels direct over je internetverbinding in 4K kwaliteit op smart tv's en streaming sticks.`,
+          text: `${CONSTANTS.BRAND_NAME} levert uitstekende ${CONSTANTS.FOCUS_KEYWORD} tv-streaming in Nederland. In plaats van traditionele kabel of satelliet, streamen wij 36.000+ live zenders en meer dan 120.000 video-on-demand titels direct over je internetverbinding in 4K kwaliteit op smart tv's en streaming sticks.`,
         },
       },
       {
@@ -192,7 +192,7 @@ export function FAQSchema() {
         name: `Waarom wordt ${CONSTANTS.BRAND_NAME} beschouwd als de beste keuze voor onze klanten?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Als toonaangevende specialist voor streaming content bieden wij een uitgebreid zenderaanbod voor elke sport-, film- en seriecategorie. Van live sportevenementen tot de nieuwste releases, klanten profiteren van ononderbroken anti-freeze servers voor maximale stabiliteit.`,
+          text: `Als toonaangevende specialist voor streaming content in Nederland bieden wij een uitgebreid zenderaanbod voor elke sport-, film- en seriecategorie. Van live sportevenementen tot de nieuwste releases, klanten profiteren van ononderbroken anti-freeze servers voor maximale stabiliteit.`,
         },
       },
       {
@@ -232,7 +232,7 @@ export function FAQSchema() {
         name: `Welke betaalopties zijn er beschikbaar bij ${CONSTANTS.BRAND_NAME}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Wij accepteren veilige betalingen via iDEAL, Bancontact, creditcard en crypto. Alle abonnementen zijn transparant geprijsd zonder verborgen kosten en verplichten je niet tot automatische verlenging.',
+          text: 'Wij accepteren veilige betalingen via iDEAL, creditcard en crypto. Alle abonnementen zijn transparant geprijsd zonder verborgen kosten en verplichten je niet tot automatische verlenging.',
         },
       },
       {

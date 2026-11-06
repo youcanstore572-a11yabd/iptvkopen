@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Header from './components/Header';
@@ -20,14 +21,14 @@ const clampDescription = (s: string, max = 160): string =>
   s.length <= max ? s : s.slice(0, max - 3).trimEnd() + '...';
 
 // ---------------------------------------------------------------------------
-// SEO STRINGS — DUTCH LOCALIZED FOR IPTV KOPEN PLUS
+// SEO STRINGS — STRICTLY NEDERLAND ONLY
 // ---------------------------------------------------------------------------
 const SEO_TITLE = clampTitle(
   `${BRAND} - Beste IPTV-aanbieder in Nederland | 36.000+ Zenders in 4K`
 );
 
 const SEO_DESCRIPTION = clampDescription(
-  `De beste IPTV-aanbieder van Nederland en België. Geniet van 36.000+ live zenders, 120.000+ films en series in 4K Ultra HD. Directe installatie en 24/7 support.`
+  `De beste IPTV-aanbieder van Nederland. Geniet van 36.000+ live zenders, 120.000+ films en series in 4K Ultra HD. Directe installatie en 24/7 support.`
 );
 
 const SEO_OG_TITLE = SEO_TITLE;
@@ -46,7 +47,7 @@ export const viewport: Viewport = {
 };
 
 // ---------------------------------------------------------------------------
-// GLOBAL METADATA
+// GLOBAL METADATA — STRICTLY NL ONLY
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -78,7 +79,6 @@ export const metadata: Metadata = {
     canonical: './',
     languages: {
       'nl-NL': SITE_URL,
-      'nl-BE': SITE_URL,
       'x-default': SITE_URL,
     },
   },
@@ -160,7 +160,7 @@ export const metadata: Metadata = {
 };
 
 // ---------------------------------------------------------------------------
-// SITE-WIDE SCHEMAS (Organization & WebSite only - safe for all pages)
+// SITE-WIDE SCHEMAS (Strictly NL Area Served)
 // ---------------------------------------------------------------------------
 const OrganizationSchema = () => (
   <script
@@ -183,8 +183,8 @@ const OrganizationSchema = () => (
           telephone: CONSTANTS.CONTACT.phone,
           email: CONSTANTS.CONTACT.email,
           contactType: 'klantenservice',
-          availableLanguage: ['Dutch', 'English'],
-          areaServed: ['NL', 'BE'],
+          availableLanguage: ['Dutch'],
+          areaServed: ['NL'],
           contactOption: 'TollFree',
         },
       }),

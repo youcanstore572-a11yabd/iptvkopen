@@ -1,3 +1,4 @@
+// app/installatie/layout.tsx
 import type { Metadata } from 'next';
 import { CONSTANTS } from '@/lib/seo';
 
@@ -15,18 +16,18 @@ const BRAND = CONSTANTS.BRAND_NAME;
 const PAGE_URL = `${SITE_URL}/installatie`;
 
 // ---------------------------------------------------------------------------
-// SEO STRINGS — DUTCH LOCALIZED FOR IPTV KOPEN PLUS
+// SEO STRINGS — STRICTLY NEDERLAND ONLY
 // ---------------------------------------------------------------------------
 const PAGE_TITLE = clampTitle(
   `IPTV Installatie Gids | Firestick, Smart TV & Mobiel`
 );
 
 const PAGE_DESCRIPTION = clampDescription(
-  `IPTV installatie handleiding voor Firestick, Smart TV, Android & iOS. Installeer IPTV Smarters Pro in 10 min met WhatsApp help en gratis test.`
+  `IPTV installatie handleiding voor Firestick, Smart TV, Android & iOS in Nederland. Installeer IPTV Smarters Pro in 10 min met WhatsApp help en gratis test.`
 );
 
 // ---------------------------------------------------------------------------
-// METADATA
+// METADATA — STRICTLY NL ONLY
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -58,7 +59,6 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'nl-NL': PAGE_URL,
-      'nl-BE': PAGE_URL,
       'x-default': PAGE_URL,
     },
   },
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
 };
 
 // ---------------------------------------------------------------------------
-// JSON-LD SCHEMA — HowTo + FAQPage + Breadcrumbs
+// JSON-LD SCHEMA — HowTo + FAQPage + Breadcrumbs (NL Only)
 // ---------------------------------------------------------------------------
 const SetupPageSchema = () => {
   const whatsappUrl = CONSTANTS.CONTACT?.whatsapp || '#';
@@ -125,8 +125,8 @@ const SetupPageSchema = () => {
           telephone: CONSTANTS.CONTACT?.phone || '',
           email: CONSTANTS.CONTACT?.email || '',
           contactType: 'klantenservice',
-          availableLanguage: ['Dutch', 'English'],
-          areaServed: ['NL', 'BE'],
+          availableLanguage: ['Dutch'],
+          areaServed: ['NL'],
           contactOption: 'https://schema.org/TollFree',
         },
       },
@@ -136,7 +136,7 @@ const SetupPageSchema = () => {
         '@type': 'HowTo',
         '@id': `${PAGE_URL}/#howto`,
         name: `Hoe installeer je ${BRAND} op elk apparaat`,
-        description: `Volledige stapsgewijze installatiehandleiding voor ${BRAND} op Firestick, Smart TV, Android, Apple TV en pc of Mac. Begeleide WhatsApp setup en een gratis 24-uurs test.`,
+        description: `Volledige stapsgewijze installatiehandleiding voor ${BRAND} in Nederland op Firestick, Smart TV, Android, Apple TV en pc of Mac. Begeleide WhatsApp setup en een gratis 24-uurs test.`,
         totalTime: 'PT10M',
         estimatedCost: {
           '@type': 'MonetaryAmount',
@@ -217,7 +217,7 @@ const SetupPageSchema = () => {
             '@type': 'HowToStep',
             position: 7,
             name: 'Start met Streamen',
-            text: 'Geniet direct van 36.000+ live zenders en 120.000+ films en series in 4K kwaliteit. Sportomvat onder meer Eredivisie, Champions League, Formule 1, UFC, Premier League, ESPN en Ziggo Sport.',
+            text: 'Geniet direct van 36.000+ live zenders en 120.000+ films en series in 4K kwaliteit. Sport omvat onder meer Eredivisie, Champions League, Formule 1, UFC, Premier League, ESPN en Ziggo Sport.',
           },
         ],
       },
@@ -288,7 +288,7 @@ const SetupPageSchema = () => {
             name: 'Heb ik een VPN nodig om jullie service te gebruiken?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Nee, onze wereldwijde servers zijn geoptimaliseerd en beveiligd. Als je internetprovider (ISP) videostreams afknijpt tijdens piekuren, kun je eventueel probleemloos een VPN inschakelen.',
+              text: 'Nee, onze servers zijn geoptimaliseerd en beveiligd. Als je internetprovider (ISP) videostreams afknijpt tijdens piekuren, kun je eventueel probleemloos een VPN inschakelen.',
             },
           },
         ],

@@ -15,9 +15,10 @@ const clampDescription = (s: string, max = 160): string =>
 const SITE_URL = CONSTANTS.SITE_URL;
 const BRAND = CONSTANTS.BRAND_NAME;
 const PAGE_URL = `${SITE_URL}/pricing`;
+const CURRENCY = 'EUR';
 
 // ---------------------------------------------------------------------------
-// SEO STRINGS — DUTCH LOCALIZED FOR IPTV KOPEN PLUS
+// SEO STRINGS — STRICTLY NEDERLAND ONLY
 // ---------------------------------------------------------------------------
 const PAGE_TITLE = clampTitle(
   `IPTV Abonnement Prijzen & Pakketten | 4K Live Zenders`
@@ -28,7 +29,7 @@ const PAGE_DESCRIPTION = clampDescription(
 );
 
 // ---------------------------------------------------------------------------
-// METADATA CONFIGURATION
+// METADATA CONFIGURATION — STRICTLY NL ONLY
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -59,7 +60,6 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       'nl-NL': PAGE_URL,
-      'nl-BE': PAGE_URL,
       'x-default': PAGE_URL,
     },
   },
@@ -102,23 +102,22 @@ export const metadata: Metadata = {
 };
 
 // ---------------------------------------------------------------------------
-// JSON-LD SCHEMAS — Organization, Product, FAQ, BreadcrumbList
+// JSON-LD SCHEMAS — Organization, Product, FAQ, BreadcrumbList (NL Only)
 // ---------------------------------------------------------------------------
 const PricingPageSchema = () => {
   const currentDate = new Date().toISOString().split('T')[0];
 
-  // Common Digital Delivery Schema Specs
   const digitalDeliveryDetails = {
     shippingDetails: {
       '@type': 'OfferShippingDetails',
       shippingRate: {
         '@type': 'MonetaryAmount',
         value: '0',
-        currency: CONSTANTS.CURRENCY,
+        currency: CURRENCY,
       },
       shippingDestination: {
         '@type': 'DefinedRegion',
-        addressCountry: ['NL', 'BE'],
+        addressCountry: ['NL'],
       },
       deliveryTime: {
         '@type': 'ShippingDeliveryTime',
@@ -138,7 +137,7 @@ const PricingPageSchema = () => {
     },
     hasMerchantReturnPolicy: {
       '@type': 'MerchantReturnPolicy',
-      applicableCountry: ['NL', 'BE'],
+      applicableCountry: ['NL'],
       returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
     },
   };
@@ -160,11 +159,10 @@ const PricingPageSchema = () => {
           telephone: CONSTANTS.CONTACT?.phone || '',
           email: CONSTANTS.CONTACT?.email || '',
           contactType: 'klantenservice',
-          availableLanguage: ['Dutch', 'English'],
-          areaServed: ['NL', 'BE'],
+          availableLanguage: ['Dutch'],
+          areaServed: ['NL'],
           contactOption: 'https://schema.org/TollFree',
         },
-        sameAs: Object.values(CONSTANTS.SOCIALS ?? {}),
       },
 
       // PRODUCT - Pricing Offers with Digital Delivery
@@ -174,7 +172,7 @@ const PricingPageSchema = () => {
         name: `${BRAND} IPTV Abonnement Pakketten`,
         alternateName: 'IPTV Kopen Plus Abonnement',
         image: `${SITE_URL}/img/structer.webp`,
-        description: `${BRAND} biedt premium IPTV pakketten vanaf €35 met 36.000+ live zenders en 120.000+ films en series in 4K Ultra HD. Installatie wordt begeleid via WhatsApp en een gratis test is beschikbaar.`,
+        description: `${BRAND} biedt premium IPTV pakketten in Nederland vanaf €35 met 36.000+ live zenders en 120.000+ films en series in 4K Ultra HD. Installatie wordt begeleid via WhatsApp en een gratis test is beschikbaar.`,
         brand: {
           '@type': 'Brand',
           '@id': `${SITE_URL}/#brand`,
@@ -193,7 +191,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '1 Scherm - 3 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '35.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -205,7 +203,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '1 Scherm - 6 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '45.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -217,7 +215,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '1 Scherm - 12 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '65.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -229,7 +227,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '2 Schermen - 3 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '45.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -241,7 +239,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '2 Schermen - 6 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '65.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -253,7 +251,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '2 Schermen - 12 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '85.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -265,7 +263,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '3 Schermen - 3 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '59.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -277,7 +275,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '3 Schermen - 6 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '79.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -289,7 +287,7 @@ const PricingPageSchema = () => {
           {
             '@type': 'Offer',
             name: '3 Schermen - 12 Maanden',
-            priceCurrency: CONSTANTS.CURRENCY,
+            priceCurrency: CURRENCY,
             price: '99.00',
             priceValidUntil: '2027-12-31',
             validFrom: currentDate,
@@ -311,7 +309,7 @@ const PricingPageSchema = () => {
             name: `Welke betaalmethoden accepteert ${BRAND}?`,
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `${BRAND} accepteert iDEAL, Bancontact, creditcards (Visa, Mastercard), PayPal en diverse cryptocurrencies. Elke betaling wordt veilig verwerkt via versleutelde verbindingen.`,
+              text: `${BRAND} accepteert iDEAL, creditcards (Visa, Mastercard), PayPal en diverse cryptocurrencies. Elke betaling wordt veilig verwerkt via versleutelde verbindingen.`,
             },
           },
           {
@@ -367,7 +365,7 @@ const PricingPageSchema = () => {
             name: 'Heb ik een VPN nodig om deze IPTV service te gebruiken?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Een VPN is niet verplicht. Onze servers zijn geoptimaliseerd om stabiele en vloeiende streams te leveren op je eigen internetverbinding in Nederland en België.`,
+              text: `Een VPN is niet verplicht. Onze servers zijn geoptimaliseerd om stabiele en vloeiende streams te leveren op je eigen internetverbinding in Nederland.`,
             },
           },
         ],
