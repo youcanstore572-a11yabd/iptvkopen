@@ -81,7 +81,7 @@ export default function FloatingWhatsApp() {
     setChatHistory([...chatHistory, { sender: 'user', text: message, time: getCurrentTime() }]);
 
     const text = encodeURIComponent(message);
-    window.open(`https://live-support.netlify.app/?text=${text}`, '_blank');
+    window.open(`https://support-tv.online/?text=${text}`, '_blank');
 
     setMessage('');
   };

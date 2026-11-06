@@ -259,7 +259,7 @@ export default function Footer() {
           ].map((item) => (
             <div
               key={item.alt}
-              className="relative h-9 w-14 flex-shrink-0 rounded-none border border-[#39FF14]/40 bg-white/[0.03] backdrop-blur-sm flex items-center justify-center hover:border-[#FFD700] hover:bg-[#39FF14]/10 transition-all duration-300"
+              className="relative h-9 w-14 flex-shrink-0 rounded-none border border-[#39FF14]/40 bg-white backdrop-blur-sm flex items-center justify-center hover:border-[#FFD700] hover:bg-[#39FF14]/10 transition-all duration-300"
             >
               <Image
                 src={item.src}

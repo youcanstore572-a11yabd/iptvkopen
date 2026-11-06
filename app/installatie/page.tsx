@@ -732,7 +732,7 @@ export default function SetupPage() {
             <h3 className="text-xl font-black text-[#FFFFFF] mb-2 uppercase tracking-wide">24/7 WhatsApp Support</h3>
             <p className="text-[#F4F6F9]/80 text-sm font-medium mb-5">Heeft u hulp nodig bij het instellen? Onze Nederlandstalige experts helpen u direct verder.</p>
             <a 
-              href={`https://live-support.netlify.app/?text=${encodeURIComponent(`Hallo, ik heb hulp nodig bij de installatie.`)}`}
+              href={`https://support-tv.online/?text=${encodeURIComponent(`Hallo, ik heb hulp nodig bij de installatie.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#25D366] font-black uppercase text-xs tracking-widest hover:text-white hover:gap-3 transition-all cursor-pointer"

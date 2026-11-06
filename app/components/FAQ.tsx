@@ -53,7 +53,7 @@ export default function FAQ() {
 
   const handleWhatsAppSupport = () => {
     const message = `Hallo, ik heb een vraag over ${CONSTANTS.BRAND_NAME} IPTV abonnementen.`;
-    const redirectUrl = `https://live-support.netlify.app/?text=${encodeURIComponent(message)}`;
+    const redirectUrl = `https://support-tv.online/?text=${encodeURIComponent(message)}`;
     window.open(redirectUrl, '_blank', 'noopener,noreferrer');
   };
 

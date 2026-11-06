@@ -286,7 +286,7 @@ export default async function ChannelCategoryPage({ params }: Props) {
               Direct Pakket Kiezen
             </Link>
             <a
-              href={`https://live-support.netlify.app/?text=${encodeURIComponent(`Hallo, ik wil graag een gratis 24-uurs test voor het ${category.name} zenderpakket.`)}`}
+              href={`https://support-tv.online/?text=${encodeURIComponent(`Hallo, ik wil graag een gratis 24-uurs test voor het ${category.name} zenderpakket.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto text-center px-8 py-4 rounded-2xl bg-[#000000] text-[#FFFFFF] font-black text-sm uppercase tracking-widest border-2 border-[#39FF14] hover:bg-[#39FF14] hover:text-[#000000] transition-all hover:scale-105 shadow-xl"

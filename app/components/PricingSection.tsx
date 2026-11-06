@@ -33,13 +33,13 @@ export default function PricingSection() {
     const message = `Hallo, ik wil graag een IPTV Kopen abonnement van ${months} maanden bestellen voor ${devices} ${
       devices > 1 ? 'schermen' : 'scherm'
     } via IPTVKopen.plus.`;
-    const redirectUrl = `https://live-support.netlify.app/?text=${encodeURIComponent(message)}`;
+    const redirectUrl = `https://support-tv.online/?text=${encodeURIComponent(message)}`;
     window.open(redirectUrl, '_blank', 'noopener,noreferrer');
   };
 
   const handleFreeTrialRedirect = () => {
     const message = `Hallo, ik wil graag een gratis 24-uurs IPTV test aanvragen voor IPTV Nederland via IPTVKopen.plus.`;
-    const redirectUrl = `https://live-support.netlify.app/?text=${encodeURIComponent(message)}`;
+    const redirectUrl = `https://support-tv.online/?text=${encodeURIComponent(message)}`;
     window.open(redirectUrl, '_blank', 'noopener,noreferrer');
   };
 

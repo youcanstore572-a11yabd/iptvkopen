@@ -25,6 +25,7 @@ import {
   Film, 
   Trophy, 
   Calendar, 
+  ShoppingCart,
   Database, 
   Tv, 
   Volume2, 
@@ -125,18 +126,20 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md sm:max-w-xl mx-auto px-4">
             <Link 
               href="/pakketten" 
-              className="w-full sm:w-auto text-center whitespace-nowrap px-6 sm:px-8 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-base sm:text-lg hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-wider shrink-0 shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(184,155,0,0.6)] border border-yellow-200"
+              className="w-full sm:w-auto text-center whitespace-nowrap px-6 sm:px-8 py-4 rounded-2xl bg-[#FFD700] text-[#0A1A2F] font-black text-base sm:text-lg hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-wider shrink-0 shadow-[0_10px_30px_rgba(255,215,0,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(184,155,0,0.6)] border border-yellow-200 flex flex-row items-center justify-center gap-2"
             >
-              Bekijk Abonnementen
+              <ShoppingCart className="w-5 h-5 shrink-0 text-[#0A1A2F]" />
+              <span>Bekijk Abonnementen</span>
             </Link>
+
             <Link 
               href="#channels" 
-              className="w-full sm:w-auto text-center whitespace-nowrap px-6 sm:px-8 py-4 rounded-2xl bg-[#39FF14] text-[#0A1A2F] font-black text-base sm:text-lg hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-wider flex items-center justify-center gap-2 shrink-0 shadow-[0_10px_30px_rgba(57,255,20,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,128,0,0.6)] border border-green-300"
+              className="w-full sm:w-auto text-center whitespace-nowrap px-6 sm:px-8 py-4 rounded-2xl bg-[#39FF14] text-[#0A1A2F] font-black text-base sm:text-lg hover:scale-[1.02] active:scale-[0.98] transition-all uppercase tracking-wider shrink-0 shadow-[0_10px_30px_rgba(57,255,20,0.45),inset_0_2px_5px_rgba(255,255,255,0.95),inset_0_-3px_6px_rgba(0,128,0,0.6)] border border-green-300 flex flex-row items-center justify-center gap-2"
             >
-              <PlayCircle className="w-5 h-5 shrink-0 text-[#0A1A2F]" /> Zenderaanbod
+              <PlayCircle className="w-5 h-5 shrink-0 text-[#0A1A2F]" />
+              <span>Zenderaanbod</span>
             </Link>
           </div>
-          
           <div className="mt-12 flex flex-wrap justify-center gap-6 text-xs md:text-sm text-[#FFFFFF] font-black uppercase tracking-widest bg-[#132948] backdrop-blur-sm px-8 py-4 rounded-none border border-[#39FF14]/30 shadow-md">
             <span className="flex items-center gap-2"><Zap className="w-5 h-5 text-[#39FF14]" /> 4K & Full HD Beeld</span>
             <span className="flex items-center gap-2"><ShieldCheck className="w-5 h-5 text-[#39FF14]" /> 99.9% Server Uptime</span>
